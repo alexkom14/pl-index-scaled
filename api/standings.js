@@ -1,10 +1,13 @@
 export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', 'https://alexkom14.github.io')
+  res.setHeader('Access-Control-Allow-Methods', 'GET')
+
   try {
     const response = await fetch(
       'https://api.football-data.org/v4/competitions/PL/standings',
       {
         headers: {
-          'X-Auth-Token': import.meta.env.VITE_API_KEY,
+          'X-Auth-Token': process.env.API_KEY,
         },
       }
     )
@@ -25,7 +28,7 @@ export default async function handler(req, res) {
       logo: entry.team.crest,
     }))
 
-    res.setHeader('Cache-Control', 's-maxage=300') // cache 5 mins on Vercel
+    res.setHeader('Cache-Control', 's-maxage=300')
     res.status(200).json(teams)
   } catch (err) {
     res.status(500).json({ error: 'Server error' })
