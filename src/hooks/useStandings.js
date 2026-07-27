@@ -16,7 +16,17 @@ export function useStandings() {
         return res.json()
       })
       .then(data => {
-        setTeams(data)
+        const overall = data.standings.find(s => s.type === 'TOTAL')
+        const mapped = overall.table.map(row => ({
+          rank: row.position,
+          pts: row.points,
+          name: row.team.name,
+          logo: row.team.crest,
+          won: row.won,
+          draw: row.draw,
+          lost: row.lost
+        }))
+        setTeams(mapped)
         setLoading(false)
       })
       .catch(err => {
