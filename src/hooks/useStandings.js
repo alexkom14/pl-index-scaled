@@ -6,7 +6,11 @@ export function useStandings() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('/api/standings')
+    fetch('https://api.football-data.org/v4/competitions/PL/standings', {
+      headers: {
+        'X-Auth-Token': import.meta.env.VITE_API_KEY
+      }
+    })
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch')
         return res.json()
