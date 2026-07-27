@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/pl-Index-scaled/',
+  base: '/pl-index-scaled/',
   plugins: [react()],
   server: {
     proxy: {
