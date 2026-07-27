@@ -1,0 +1,32 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.chart {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+  position: relative;
+}
+
+.col {
+  position: relative;
+  width: 220px;
+}
+
+.scaleWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.gridLine {
+  position: absolute;
+  left: -220px;
+  right: -220px;
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+  transform: translateY(-50%);
+  pointer-events: none;
+}

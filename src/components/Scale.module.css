@@ -1,0 +1,45 @@
+.scale {
+  position: relative;
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.tick {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  transform: translateY(-50%);
+  opacity: 0.35;
+}
+
+.tick.major {
+  opacity: 1;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  width: 24px;
+  text-align: right;
+  letter-spacing: -0.02em;
+}
+
+.major .num {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.mark {
+  display: block;
+  width: 6px;
+  height: 1px;
+  background: var(--muted);
+  margin-left: 4px;
+}
+
+.major .mark {
+  width: 10px;
+  background: var(--text);
+}

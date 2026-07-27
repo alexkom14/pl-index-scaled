@@ -1,0 +1,36 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0d0d0b;
+  --bg2: #141412;
+  --surface: #1c1c19;
+  --border: rgba(255,255,255,0.07);
+  --text: #f0ede4;
+  --muted: #6b6960;
+  --faint: rgba(255,255,255,0.04);
+
+  --ucl: #1D9E75;
+  --uel: #378ADD;
+  --uecl: #EF9F27;
+  --rel: #E24B4A;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--ucl);
+  color: #fff;
+}
